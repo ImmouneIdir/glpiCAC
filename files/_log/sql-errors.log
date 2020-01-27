@@ -1,0 +1,272 @@
+2020-01-23 11:12:09 [2@GLPI]
+  *** MySQL query error:
+  SQL: SELECT \'glpi\' AS currentuser,
+                        `glpi_tickets`.`id` AS `ITEM_0`,   `glpi_tickets`.`name` AS `ITEM_1`,
+                        `glpi_tickets`.`id` AS `ITEM_1_id`,
+                        `glpi_tickets`.`id` AS `ITEM_1_id`, `glpi_tickets`.`content` AS `ITEM_1_content`, `glpi_tickets`.`status` AS `ITEM_1_status`, `glpi_tickets`.`status` AS `ITEM_2`,  `glpi_tickets`.`date_mod` AS `ITEM_3`,  `glpi_tickets`.`date` AS `ITEM_4`,  `glpi_tickets`.`priority` AS `ITEM_5`,   GROUP_CONCAT(DISTINCT `glpi_users_647c2805c3795643b0f52f520e7cdb86`.`id` SEPARATOR \'$$##$$\')
+                                       AS `ITEM_6`,
+                           GROUP_CONCAT(DISTINCT CONCAT(`glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`users_id`, \' \',
+                                                        `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`alternative_email`)
+                                                        SEPARATOR \'$$##$$\') AS `ITEM_6_2`, 
+                            GROUP_CONCAT(DISTINCT `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`.`id` SEPARATOR \'$$##$$\')
+                                       AS `ITEM_7`,
+                           GROUP_CONCAT(DISTINCT CONCAT(`glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`users_id`, \' \',
+                                                        `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`alternative_email`)
+                                                        SEPARATOR \'$$##$$\') AS `ITEM_7_2`, 
+                           `glpi_itilcategories`.`completename` AS `ITEM_8`,  `glpi_tickets`.`due_date` AS `ITEM_9`,  `glpi_tickets`.`status` AS `ITEM_9_status`, `glpi_tickets`.`id` AS id  FROM `glpi_tickets` LEFT JOIN `glpi_tickets_users`  AS `glpi_tickets_users_a900a61824c3906cc82f90407e525192`
+                                             ON (`glpi_tickets`.`id` = `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`tickets_id`
+                                                 AND `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`type`
+                                                                 = 1 )LEFT JOIN `glpi_users`  AS `glpi_users_647c2805c3795643b0f52f520e7cdb86`
+                                          ON (`glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`users_id` = `glpi_users_647c2805c3795643b0f52f520e7cdb86`.`id`
+                                              ) LEFT JOIN `glpi_tickets_users`  AS `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`
+                                             ON (`glpi_tickets`.`id` = `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`tickets_id`
+                                                 AND `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`type`
+                                                                  = 2 )LEFT JOIN `glpi_users`  AS `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`
+                                          ON (`glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`users_id` = `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`.`id`
+                                              )LEFT JOIN `glpi_itilcategories` 
+                                          ON (`glpi_tickets`.`itilcategories_id` = `glpi_itilcategories`.`id`
+                                              ) WHERE  `glpi_tickets`.`is_deleted` = \'0\'  AND (   `glpi_tickets`.`status` IN (\'1\',\'2\',\'3\',\'4\') ) GROUP BY `glpi_tickets`.`id` ORDER BY ITEM_3 DESC 
+  Error: Unknown column 'glpi_tickets.due_date' in 'field list'
+  Backtrace :
+  inc/search.class.php:921                           
+  inc/search.class.php:97                            Search::constructDatas()
+  inc/search.class.php:80                            Search::showList()
+  front/ticket.php:56                                Search::show()
+2020-01-23 11:12:14 [2@GLPI]
+  *** MySQL query error:
+  SQL: SELECT \'glpi\' AS currentuser,
+                        `glpi_tickets`.`id` AS `ITEM_0`,   `glpi_tickets`.`name` AS `ITEM_1`,
+                        `glpi_tickets`.`id` AS `ITEM_1_id`,
+                        `glpi_tickets`.`id` AS `ITEM_1_id`, `glpi_tickets`.`content` AS `ITEM_1_content`, `glpi_tickets`.`status` AS `ITEM_1_status`, `glpi_tickets`.`status` AS `ITEM_2`,  `glpi_tickets`.`date_mod` AS `ITEM_3`,  `glpi_tickets`.`date` AS `ITEM_4`,  `glpi_tickets`.`priority` AS `ITEM_5`,   GROUP_CONCAT(DISTINCT `glpi_users_647c2805c3795643b0f52f520e7cdb86`.`id` SEPARATOR \'$$##$$\')
+                                       AS `ITEM_6`,
+                           GROUP_CONCAT(DISTINCT CONCAT(`glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`users_id`, \' \',
+                                                        `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`alternative_email`)
+                                                        SEPARATOR \'$$##$$\') AS `ITEM_6_2`, 
+                            GROUP_CONCAT(DISTINCT `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`.`id` SEPARATOR \'$$##$$\')
+                                       AS `ITEM_7`,
+                           GROUP_CONCAT(DISTINCT CONCAT(`glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`users_id`, \' \',
+                                                        `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`alternative_email`)
+                                                        SEPARATOR \'$$##$$\') AS `ITEM_7_2`, 
+                           `glpi_itilcategories`.`completename` AS `ITEM_8`,  `glpi_tickets`.`due_date` AS `ITEM_9`,  `glpi_tickets`.`status` AS `ITEM_9_status`, `glpi_tickets`.`id` AS id  FROM `glpi_tickets` LEFT JOIN `glpi_tickets_users`  AS `glpi_tickets_users_a900a61824c3906cc82f90407e525192`
+                                             ON (`glpi_tickets`.`id` = `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`tickets_id`
+                                                 AND `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`type`
+                                                                 = 1 )LEFT JOIN `glpi_users`  AS `glpi_users_647c2805c3795643b0f52f520e7cdb86`
+                                          ON (`glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`users_id` = `glpi_users_647c2805c3795643b0f52f520e7cdb86`.`id`
+                                              ) LEFT JOIN `glpi_tickets_users`  AS `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`
+                                             ON (`glpi_tickets`.`id` = `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`tickets_id`
+                                                 AND `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`type`
+                                                                  = 2 )LEFT JOIN `glpi_users`  AS `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`
+                                          ON (`glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`users_id` = `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`.`id`
+                                              )LEFT JOIN `glpi_itilcategories` 
+                                          ON (`glpi_tickets`.`itilcategories_id` = `glpi_itilcategories`.`id`
+                                              ) WHERE  `glpi_tickets`.`is_deleted` = \'0\'  AND (   `glpi_tickets`.`status` IN (\'1\',\'2\',\'3\',\'4\') ) GROUP BY `glpi_tickets`.`id` ORDER BY ITEM_3 DESC 
+  Error: Unknown column 'glpi_tickets.due_date' in 'field list'
+  Backtrace :
+  inc/search.class.php:921                           
+  inc/search.class.php:97                            Search::constructDatas()
+  inc/search.class.php:80                            Search::showList()
+  front/ticket.php:56                                Search::show()
+2020-01-23 11:13:06 [2@GLPI]
+  *** MySQL query error:
+  SQL: SELECT \'glpi\' AS currentuser,
+                        `glpi_tickets`.`id` AS `ITEM_0`,   `glpi_tickets`.`name` AS `ITEM_1`,
+                        `glpi_tickets`.`id` AS `ITEM_1_id`,
+                        `glpi_tickets`.`id` AS `ITEM_1_id`, `glpi_tickets`.`content` AS `ITEM_1_content`, `glpi_tickets`.`status` AS `ITEM_1_status`, `glpi_tickets`.`status` AS `ITEM_2`,  `glpi_tickets`.`date_mod` AS `ITEM_3`,  `glpi_tickets`.`date` AS `ITEM_4`,  `glpi_tickets`.`priority` AS `ITEM_5`,   GROUP_CONCAT(DISTINCT `glpi_users_647c2805c3795643b0f52f520e7cdb86`.`id` SEPARATOR \'$$##$$\')
+                                       AS `ITEM_6`,
+                           GROUP_CONCAT(DISTINCT CONCAT(`glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`users_id`, \' \',
+                                                        `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`alternative_email`)
+                                                        SEPARATOR \'$$##$$\') AS `ITEM_6_2`, 
+                            GROUP_CONCAT(DISTINCT `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`.`id` SEPARATOR \'$$##$$\')
+                                       AS `ITEM_7`,
+                           GROUP_CONCAT(DISTINCT CONCAT(`glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`users_id`, \' \',
+                                                        `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`alternative_email`)
+                                                        SEPARATOR \'$$##$$\') AS `ITEM_7_2`, 
+                           `glpi_itilcategories`.`completename` AS `ITEM_8`,  `glpi_tickets`.`due_date` AS `ITEM_9`,  `glpi_tickets`.`status` AS `ITEM_9_status`, `glpi_tickets`.`id` AS id  FROM `glpi_tickets` LEFT JOIN `glpi_tickets_users`  AS `glpi_tickets_users_a900a61824c3906cc82f90407e525192`
+                                             ON (`glpi_tickets`.`id` = `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`tickets_id`
+                                                 AND `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`type`
+                                                                 = 1 )LEFT JOIN `glpi_users`  AS `glpi_users_647c2805c3795643b0f52f520e7cdb86`
+                                          ON (`glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`users_id` = `glpi_users_647c2805c3795643b0f52f520e7cdb86`.`id`
+                                              ) LEFT JOIN `glpi_tickets_users`  AS `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`
+                                             ON (`glpi_tickets`.`id` = `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`tickets_id`
+                                                 AND `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`type`
+                                                                  = 2 )LEFT JOIN `glpi_users`  AS `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`
+                                          ON (`glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`users_id` = `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`.`id`
+                                              )LEFT JOIN `glpi_itilcategories` 
+                                          ON (`glpi_tickets`.`itilcategories_id` = `glpi_itilcategories`.`id`
+                                              ) WHERE  `glpi_tickets`.`is_deleted` = \'0\'  AND (   `glpi_tickets`.`status` IN (\'1\',\'2\',\'3\',\'4\') ) GROUP BY `glpi_tickets`.`id` ORDER BY ITEM_3 DESC 
+  Error: Unknown column 'glpi_tickets.due_date' in 'field list'
+  Backtrace :
+  inc/search.class.php:921                           
+  inc/search.class.php:97                            Search::constructDatas()
+  inc/search.class.php:80                            Search::showList()
+  front/ticket.php:56                                Search::show()
+2020-01-23 11:15:59 [2@GLPI]
+  *** MySQL query error:
+  SQL: SELECT \'glpi\' AS currentuser,
+                        `glpi_tickets`.`id` AS `ITEM_0`,   `glpi_tickets`.`name` AS `ITEM_1`,
+                        `glpi_tickets`.`id` AS `ITEM_1_id`,
+                        `glpi_tickets`.`id` AS `ITEM_1_id`, `glpi_tickets`.`content` AS `ITEM_1_content`, `glpi_tickets`.`status` AS `ITEM_1_status`, `glpi_tickets`.`status` AS `ITEM_2`,  `glpi_tickets`.`date_mod` AS `ITEM_3`,  `glpi_tickets`.`date` AS `ITEM_4`,  `glpi_tickets`.`priority` AS `ITEM_5`,   GROUP_CONCAT(DISTINCT `glpi_users_647c2805c3795643b0f52f520e7cdb86`.`id` SEPARATOR \'$$##$$\')
+                                       AS `ITEM_6`,
+                           GROUP_CONCAT(DISTINCT CONCAT(`glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`users_id`, \' \',
+                                                        `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`alternative_email`)
+                                                        SEPARATOR \'$$##$$\') AS `ITEM_6_2`, 
+                            GROUP_CONCAT(DISTINCT `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`.`id` SEPARATOR \'$$##$$\')
+                                       AS `ITEM_7`,
+                           GROUP_CONCAT(DISTINCT CONCAT(`glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`users_id`, \' \',
+                                                        `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`alternative_email`)
+                                                        SEPARATOR \'$$##$$\') AS `ITEM_7_2`, 
+                           `glpi_itilcategories`.`completename` AS `ITEM_8`,  `glpi_tickets`.`due_date` AS `ITEM_9`,  `glpi_tickets`.`status` AS `ITEM_9_status`, `glpi_tickets`.`id` AS id  FROM `glpi_tickets` LEFT JOIN `glpi_tickets_users`  AS `glpi_tickets_users_a900a61824c3906cc82f90407e525192`
+                                             ON (`glpi_tickets`.`id` = `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`tickets_id`
+                                                 AND `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`type`
+                                                                 = 1 )LEFT JOIN `glpi_users`  AS `glpi_users_647c2805c3795643b0f52f520e7cdb86`
+                                          ON (`glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`users_id` = `glpi_users_647c2805c3795643b0f52f520e7cdb86`.`id`
+                                              ) LEFT JOIN `glpi_tickets_users`  AS `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`
+                                             ON (`glpi_tickets`.`id` = `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`tickets_id`
+                                                 AND `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`type`
+                                                                  = 2 )LEFT JOIN `glpi_users`  AS `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`
+                                          ON (`glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`users_id` = `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`.`id`
+                                              )LEFT JOIN `glpi_itilcategories` 
+                                          ON (`glpi_tickets`.`itilcategories_id` = `glpi_itilcategories`.`id`
+                                              ) WHERE  `glpi_tickets`.`is_deleted` = \'0\'  AND (   `glpi_tickets`.`status` IN (\'1\',\'2\',\'3\',\'4\') ) GROUP BY `glpi_tickets`.`id` ORDER BY ITEM_3 DESC 
+  Error: Unknown column 'glpi_tickets.due_date' in 'field list'
+  Backtrace :
+  inc/search.class.php:921                           
+  inc/search.class.php:97                            Search::constructDatas()
+  inc/search.class.php:80                            Search::showList()
+  front/ticket.php:56                                Search::show()
+2020-01-23 11:16:13 [2@GLPI]
+  *** MySQL query error:
+  SQL: SELECT \'glpi\' AS currentuser,
+                        `glpi_tickets`.`id` AS `ITEM_0`,   `glpi_tickets`.`name` AS `ITEM_1`,
+                        `glpi_tickets`.`id` AS `ITEM_1_id`,
+                        `glpi_tickets`.`id` AS `ITEM_1_id`, `glpi_tickets`.`content` AS `ITEM_1_content`, `glpi_tickets`.`status` AS `ITEM_1_status`, `glpi_tickets`.`status` AS `ITEM_2`,  `glpi_tickets`.`date_mod` AS `ITEM_3`,  `glpi_tickets`.`date` AS `ITEM_4`,  `glpi_tickets`.`priority` AS `ITEM_5`,   GROUP_CONCAT(DISTINCT `glpi_users_647c2805c3795643b0f52f520e7cdb86`.`id` SEPARATOR \'$$##$$\')
+                                       AS `ITEM_6`,
+                           GROUP_CONCAT(DISTINCT CONCAT(`glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`users_id`, \' \',
+                                                        `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`alternative_email`)
+                                                        SEPARATOR \'$$##$$\') AS `ITEM_6_2`, 
+                            GROUP_CONCAT(DISTINCT `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`.`id` SEPARATOR \'$$##$$\')
+                                       AS `ITEM_7`,
+                           GROUP_CONCAT(DISTINCT CONCAT(`glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`users_id`, \' \',
+                                                        `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`alternative_email`)
+                                                        SEPARATOR \'$$##$$\') AS `ITEM_7_2`, 
+                           `glpi_itilcategories`.`completename` AS `ITEM_8`,  `glpi_tickets`.`due_date` AS `ITEM_9`,  `glpi_tickets`.`status` AS `ITEM_9_status`, `glpi_tickets`.`id` AS id  FROM `glpi_tickets` LEFT JOIN `glpi_tickets_users`  AS `glpi_tickets_users_a900a61824c3906cc82f90407e525192`
+                                             ON (`glpi_tickets`.`id` = `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`tickets_id`
+                                                 AND `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`type`
+                                                                 = 1 )LEFT JOIN `glpi_users`  AS `glpi_users_647c2805c3795643b0f52f520e7cdb86`
+                                          ON (`glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`users_id` = `glpi_users_647c2805c3795643b0f52f520e7cdb86`.`id`
+                                              ) LEFT JOIN `glpi_tickets_users`  AS `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`
+                                             ON (`glpi_tickets`.`id` = `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`tickets_id`
+                                                 AND `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`type`
+                                                                  = 2 )LEFT JOIN `glpi_users`  AS `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`
+                                          ON (`glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`users_id` = `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`.`id`
+                                              )LEFT JOIN `glpi_itilcategories` 
+                                          ON (`glpi_tickets`.`itilcategories_id` = `glpi_itilcategories`.`id`
+                                              ) WHERE  `glpi_tickets`.`is_deleted` = \'0\'  AND (   `glpi_tickets`.`status` IN (\'1\',\'2\',\'3\',\'4\') ) GROUP BY `glpi_tickets`.`id` ORDER BY ITEM_3 DESC 
+  Error: Unknown column 'glpi_tickets.due_date' in 'field list'
+  Backtrace :
+  inc/search.class.php:921                           
+  inc/search.class.php:97                            Search::constructDatas()
+  inc/search.class.php:80                            Search::showList()
+  front/ticket.php:56                                Search::show()
+2020-01-23 14:53:55 [2@GLPI]
+  *** MySQL query error:
+  SQL: SELECT \'glpi\' AS currentuser,
+                        `glpi_tickets`.`id` AS `ITEM_0`,   `glpi_tickets`.`name` AS `ITEM_1`,
+                        `glpi_tickets`.`id` AS `ITEM_1_id`,
+                        `glpi_tickets`.`id` AS `ITEM_1_id`, `glpi_tickets`.`content` AS `ITEM_1_content`, `glpi_tickets`.`status` AS `ITEM_1_status`, `glpi_tickets`.`status` AS `ITEM_2`,  `glpi_tickets`.`date_mod` AS `ITEM_3`,  `glpi_tickets`.`date` AS `ITEM_4`,  `glpi_tickets`.`priority` AS `ITEM_5`,   GROUP_CONCAT(DISTINCT `glpi_users_647c2805c3795643b0f52f520e7cdb86`.`id` SEPARATOR \'$$##$$\')
+                                       AS `ITEM_6`,
+                           GROUP_CONCAT(DISTINCT CONCAT(`glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`users_id`, \' \',
+                                                        `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`alternative_email`)
+                                                        SEPARATOR \'$$##$$\') AS `ITEM_6_2`, 
+                            GROUP_CONCAT(DISTINCT `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`.`id` SEPARATOR \'$$##$$\')
+                                       AS `ITEM_7`,
+                           GROUP_CONCAT(DISTINCT CONCAT(`glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`users_id`, \' \',
+                                                        `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`alternative_email`)
+                                                        SEPARATOR \'$$##$$\') AS `ITEM_7_2`, 
+                           `glpi_itilcategories`.`completename` AS `ITEM_8`,  `glpi_tickets`.`due_date` AS `ITEM_9`,  `glpi_tickets`.`status` AS `ITEM_9_status`, `glpi_tickets`.`id` AS id  FROM `glpi_tickets` LEFT JOIN `glpi_tickets_users`  AS `glpi_tickets_users_a900a61824c3906cc82f90407e525192`
+                                             ON (`glpi_tickets`.`id` = `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`tickets_id`
+                                                 AND `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`type`
+                                                                 = 1 )LEFT JOIN `glpi_users`  AS `glpi_users_647c2805c3795643b0f52f520e7cdb86`
+                                          ON (`glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`users_id` = `glpi_users_647c2805c3795643b0f52f520e7cdb86`.`id`
+                                              ) LEFT JOIN `glpi_tickets_users`  AS `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`
+                                             ON (`glpi_tickets`.`id` = `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`tickets_id`
+                                                 AND `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`type`
+                                                                  = 2 )LEFT JOIN `glpi_users`  AS `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`
+                                          ON (`glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`users_id` = `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`.`id`
+                                              )LEFT JOIN `glpi_itilcategories` 
+                                          ON (`glpi_tickets`.`itilcategories_id` = `glpi_itilcategories`.`id`
+                                              ) WHERE  `glpi_tickets`.`is_deleted` = \'0\'  AND (   `glpi_tickets`.`status` IN (\'1\',\'2\',\'3\',\'4\') ) GROUP BY `glpi_tickets`.`id` ORDER BY ITEM_3 DESC 
+  Error: Unknown column 'glpi_tickets.due_date' in 'field list'
+  Backtrace :
+  inc/search.class.php:921                           
+  inc/search.class.php:97                            Search::constructDatas()
+  inc/search.class.php:80                            Search::showList()
+  front/ticket.php:56                                Search::show()
+2020-01-24 09:24:30 [2@GLPI]
+  *** MySQL query error:
+  SQL: SELECT \'glpi\' AS currentuser,
+                        `glpi_tickets`.`id` AS `ITEM_0`,   `glpi_tickets`.`name` AS `ITEM_1`,
+                        `glpi_tickets`.`id` AS `ITEM_1_id`,
+                        `glpi_tickets`.`id` AS `ITEM_1_id`, `glpi_tickets`.`content` AS `ITEM_1_content`, `glpi_tickets`.`status` AS `ITEM_1_status`, `glpi_tickets`.`status` AS `ITEM_2`,  `glpi_tickets`.`date_mod` AS `ITEM_3`,  `glpi_tickets`.`date` AS `ITEM_4`,  `glpi_tickets`.`priority` AS `ITEM_5`,   GROUP_CONCAT(DISTINCT `glpi_users_647c2805c3795643b0f52f520e7cdb86`.`id` SEPARATOR \'$$##$$\')
+                                       AS `ITEM_6`,
+                           GROUP_CONCAT(DISTINCT CONCAT(`glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`users_id`, \' \',
+                                                        `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`alternative_email`)
+                                                        SEPARATOR \'$$##$$\') AS `ITEM_6_2`, 
+                            GROUP_CONCAT(DISTINCT `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`.`id` SEPARATOR \'$$##$$\')
+                                       AS `ITEM_7`,
+                           GROUP_CONCAT(DISTINCT CONCAT(`glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`users_id`, \' \',
+                                                        `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`alternative_email`)
+                                                        SEPARATOR \'$$##$$\') AS `ITEM_7_2`, 
+                           `glpi_itilcategories`.`completename` AS `ITEM_8`,  `glpi_tickets`.`due_date` AS `ITEM_9`,  `glpi_tickets`.`status` AS `ITEM_9_status`, `glpi_tickets`.`id` AS id  FROM `glpi_tickets` LEFT JOIN `glpi_tickets_users`  AS `glpi_tickets_users_a900a61824c3906cc82f90407e525192`
+                                             ON (`glpi_tickets`.`id` = `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`tickets_id`
+                                                 AND `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`type`
+                                                                 = 1 )LEFT JOIN `glpi_users`  AS `glpi_users_647c2805c3795643b0f52f520e7cdb86`
+                                          ON (`glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`users_id` = `glpi_users_647c2805c3795643b0f52f520e7cdb86`.`id`
+                                              ) LEFT JOIN `glpi_tickets_users`  AS `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`
+                                             ON (`glpi_tickets`.`id` = `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`tickets_id`
+                                                 AND `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`type`
+                                                                  = 2 )LEFT JOIN `glpi_users`  AS `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`
+                                          ON (`glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`users_id` = `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`.`id`
+                                              )LEFT JOIN `glpi_itilcategories` 
+                                          ON (`glpi_tickets`.`itilcategories_id` = `glpi_itilcategories`.`id`
+                                              ) WHERE  `glpi_tickets`.`is_deleted` = \'0\'  AND (   `glpi_tickets`.`status` IN (\'1\',\'2\',\'3\',\'4\') ) GROUP BY `glpi_tickets`.`id` ORDER BY ITEM_3 DESC 
+  Error: Unknown column 'glpi_tickets.due_date' in 'field list'
+  Backtrace :
+  inc/search.class.php:921                           
+  inc/search.class.php:97                            Search::constructDatas()
+  inc/search.class.php:80                            Search::showList()
+  front/ticket.php:56                                Search::show()
+2020-01-24 09:24:55 [2@GLPI]
+  *** MySQL query error:
+  SQL: SELECT \'glpi\' AS currentuser,
+                        `glpi_tickets`.`id` AS `ITEM_0`,   `glpi_tickets`.`name` AS `ITEM_1`,
+                        `glpi_tickets`.`id` AS `ITEM_1_id`,
+                        `glpi_tickets`.`id` AS `ITEM_1_id`, `glpi_tickets`.`content` AS `ITEM_1_content`, `glpi_tickets`.`status` AS `ITEM_1_status`, `glpi_tickets`.`status` AS `ITEM_2`,  `glpi_tickets`.`date_mod` AS `ITEM_3`,  `glpi_tickets`.`date` AS `ITEM_4`,  `glpi_tickets`.`priority` AS `ITEM_5`,   GROUP_CONCAT(DISTINCT `glpi_users_647c2805c3795643b0f52f520e7cdb86`.`id` SEPARATOR \'$$##$$\')
+                                       AS `ITEM_6`,
+                           GROUP_CONCAT(DISTINCT CONCAT(`glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`users_id`, \' \',
+                                                        `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`alternative_email`)
+                                                        SEPARATOR \'$$##$$\') AS `ITEM_6_2`, 
+                            GROUP_CONCAT(DISTINCT `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`.`id` SEPARATOR \'$$##$$\')
+                                       AS `ITEM_7`,
+                           GROUP_CONCAT(DISTINCT CONCAT(`glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`users_id`, \' \',
+                                                        `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`alternative_email`)
+                                                        SEPARATOR \'$$##$$\') AS `ITEM_7_2`, 
+                           `glpi_itilcategories`.`completename` AS `ITEM_8`,  `glpi_tickets`.`due_date` AS `ITEM_9`,  `glpi_tickets`.`status` AS `ITEM_9_status`, `glpi_tickets`.`id` AS id  FROM `glpi_tickets` LEFT JOIN `glpi_tickets_users`  AS `glpi_tickets_users_a900a61824c3906cc82f90407e525192`
+                                             ON (`glpi_tickets`.`id` = `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`tickets_id`
+                                                 AND `glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`type`
+                                                                 = 1 )LEFT JOIN `glpi_users`  AS `glpi_users_647c2805c3795643b0f52f520e7cdb86`
+                                          ON (`glpi_tickets_users_a900a61824c3906cc82f90407e525192`.`users_id` = `glpi_users_647c2805c3795643b0f52f520e7cdb86`.`id`
+                                              ) LEFT JOIN `glpi_tickets_users`  AS `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`
+                                             ON (`glpi_tickets`.`id` = `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`tickets_id`
+                                                 AND `glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`type`
+                                                                  = 2 )LEFT JOIN `glpi_users`  AS `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`
+                                          ON (`glpi_tickets_users_74690f2626744a37ace4c70dd87cea83`.`users_id` = `glpi_users_c5e682856a6d6fe48b5aed8f8b238708`.`id`
+                                              )LEFT JOIN `glpi_itilcategories` 
+                                          ON (`glpi_tickets`.`itilcategories_id` = `glpi_itilcategories`.`id`
+                                              ) WHERE  `glpi_tickets`.`is_deleted` = \'0\'  AND (   `glpi_tickets`.`status` IN (\'1\',\'2\',\'3\',\'4\') ) GROUP BY `glpi_tickets`.`id` ORDER BY ITEM_3 DESC 
+  Error: Unknown column 'glpi_tickets.due_date' in 'field list'
+  Backtrace :
+  inc/search.class.php:921                           
+  inc/search.class.php:97                            Search::constructDatas()
+  inc/search.class.php:80                            Search::showList()
+  front/ticket.php:56                                Search::show()
